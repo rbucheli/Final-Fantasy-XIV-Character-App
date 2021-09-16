@@ -1,41 +1,62 @@
-let gameData;
+// let gameData;
 
 const $name = $("#name");
-// const $server = $("#server");
-// const $classLevel = $("#classLevel");
-// const $freeCompany = $("#company");
+const $server = $("#server");
+const $classLevel = $("#classLevel");
+const $freeCompany = $("#company");
 // const $achievements = $("achievements");
-// const $portrait = $("#portrait");
-// const $input = $('input[type=text]');
+const $portrait = $("#portrait");
+const $input = $('input[type=text]');
 
+let charName;
+let charServer;
+let charLevel;
+let charFC;
+let charPortaitUrl;
+
+userInput = $input.val();
+
+// Need to convert search to format that api call accepts (remove spaces)
 // function handleGetData(event) {
 //   event.preventDefault();
-
 //   userInput = $input.val();
 
+//might get more than one match 
 $.ajax({
-  URL: "https://xivapi.com/character/search?name=swibble+gee"
+  url: "https://xivapi.com/character/search?name=" + userInput,
+  type: "get"
 }).then(
   (data) => {
-    console.log(data);
-    // $name.text(data.Result)
+    const lodeStoneId = data.Results[0].ID;
+    $.ajax({
+      url: `https://xivapi.com/character/${lodeStoneId}?data=FC`,
+      type: 'get'
+    }).then(
+      (data) => {
+        charName = data.Character.Name;
+        charServer = data.Character.Server;
+        char
+        setCharacterProperties();
+      },
+      (error) => {
+        console.log("Oops something went wrong: ", error);
+      }
+    )
   },
   (error) => {
     console.log("Oops something went wrong: ", error);
   });
-//       movieData = data;
-//       render();
-//     },
-//     (error) => {
-//       console.log("Oops something went wrong: ", error);
-//     }
-//   );
-// }
 
-// function render() {
-//   $title.text(movieData.Title);
-//   $year.text(movieData.Year);
-//   $rated.text(movieData.Rated);
-// }
+function setCharacterProperties() {
+  $name.text(charName);
+  $server.text(charServer);
+  //charLevel
+  //charPortaitUrl img href .setProperties('href')
+};
 
-// $('form').on('submit', handleGetData)
+//Grab dom elements
+//Create variables
+//Make ajax call for lodestone id
+//make your ajax call for char data
+//if data is successfull store them in variables
+//display elements on your page
