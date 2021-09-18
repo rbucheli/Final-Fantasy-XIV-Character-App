@@ -5,31 +5,43 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script defer src="/js/script.js"></script>
   <title>Final Fantasy</title>
 </head>
 
-
-
 <body>
-  <h1>Final Fantasy XIV</h1>
+<div class="header">
+  <h1>My Final Fantasy XIV</h1>
   <form>
     <input type="text" placeholder="Character Name" />
     <input type="submit" value="Get Character Info" />
   </form>
-  <main>
-    <h3>Character Name</h3>
-    <p id="name"></p>
-    <img src="" id="portrait">
-    <p>Server</p>
-    <p id="server"></p>
-    <p>Class Level</p>
-    <p id="classLevel"></p>
-    <p>Free Company</p>
-    <p id="company"></p>
+</div>
 
+<div class="primary-info">
+<h2>Character Name:</h2>    
+<p id="name"></p>
+</div>
+
+<img src="" id="portrait">
+
+<main> 
+    <div class="character-info">
+    <p>Server:</p>
+    <p id="server"></p>
+    <p>Class:</p>
+    <p id="classJob"></p>
+    <p>Class Level:</p>
+    <p id="classLevel"></p>
+    <p>Free Company:</p>
+    <p id="company"></p>
+    </div>
+  </main>
+    <!-- Move main to right side of portrait -->
+    <!-- Do I need a div for character information? -->
 
 </body>
 

@@ -1,13 +1,15 @@
 const $name = $("#name");
 const $server = $("#server");
-// const $classLevel = $("#classLevel");
+const $classJob = $("#classJob");
+const $classLevel = $("#classLevel");
 const $freeCompany = $("#company");
 const $portrait = $("#portrait");
 const $input = $('input[type=text]');
 
 let charName;
 let charServer;
-// let charLevel;
+let charJob;
+let charLevel;
 let charFC;
 let charPortraitUrl;
 
@@ -25,14 +27,16 @@ function handleGetData(event) {
     (data) => {
       const lodeStoneId = data.Results[0].ID;
       $.ajax({
-        url: `https://xivapi.com/character/${lodeStoneId}?data=AC,FR,FC,FCM,PVP`,
-        // url: `https://xivapi.com/character/${lodeStoneId}?data=FC`,
+        // url: `https://xivapi.com/character/${lodeStoneId}?data=AC,FR,FC,FCM,PVP`,
+        url: `https://xivapi.com/character/${lodeStoneId}?data=FC`,
         type: 'get'
       }).then(
         (data) => {
+          console.log(data);
           charName = data.Character.Name;
           charServer = data.Character.Server;
-          // charLevel = data.Character.Level;
+          charJob = data.Character.ActiveClassJob.UnlockedState.Name;
+          charLevel = data.Character.ActiveClassJob.Level;
           charPortraitUrl = data.Character.Portrait
           charFC = data.FreeCompany.Name;
           setCharacterProperties();
@@ -50,10 +54,10 @@ function handleGetData(event) {
 function setCharacterProperties() {
   $name.text(charName);
   $server.text(charServer);
-  // $classLevel.text(charLevel);
+  $classJob.text(charJob);
+  $classLevel.text(charLevel);
   $portrait.attr("src", charPortraitUrl);
   $freeCompany.text(charFC);
-  //charPortraitUrl img href .setProperties('href')
 };
 
 $('form').on('submit', handleGetData);

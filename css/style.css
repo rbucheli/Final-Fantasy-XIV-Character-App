@@ -1,0 +1,55 @@
+/* @font-face {
+  font-family: finalFont;
+  src: url();
+} */
+
+.header {
+  text-align: center;
+  padding-top: 1%;
+  color: white;
+  }
+
+.primary-info {
+  border: solid;
+  border-width: 2px;
+  border-radius: 2ch;
+  border-color: white;
+  width: 29%;
+  /* background-color: */
+  margin-top: 2%;  
+  padding-left: 10px;
+  }
+
+.character-info {
+  border: solid; 
+  border-width: 2px;
+  border-radius: 2ch;
+  border-color: white;
+  width: 50%;
+  }
+
+body {
+  padding-left: 2%;
+  padding-right: 2%;
+  background-color: rgb(47, 40, 122);
+  }
+
+p {
+  text-align: center;
+  /* border-style: dashed; */
+  /* creating one border box around text */
+  
+}
+
+#name {
+  text-align: left;
+}
+
+#portrait {
+  border-radius: 20px;
+  width: auto;
+  max-width: 30%;
+  margin-top: 2%;
+}
+/* 
+@media only screen and (min-width: 900px) { */
