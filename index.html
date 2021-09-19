@@ -13,36 +13,45 @@
 </head>
 
 <body>
-<div class="header">
-  <h1>My Final Fantasy XIV</h1>
-  <form>
-    <input type="text" placeholder="Character Name" />
-    <input type="submit" value="Get Character Info" />
-  </form>
-</div>
+  <div class="header">
+    <h1>My Final Fantasy XIV</h1>
+    <form>
+      <input type="text" placeholder="Character Name" />
+      <input type="submit" value="Get Character Info" />
+    </form>
+  </div>
 
-<div class="primary-info">
-<h2>Character Name:</h2>    
-<p id="name"></p>
-</div>
+  <main class='container'>
+    <div class='primary-column'>
+      <div class="primary-info">
+        <h2>Character Name: <span id="name"></span></h2>    
+      </div>
+  
+      <img src="" id="portrait">
+    </div>
+  
+    <div class='secondary-column'> 
+      <div class="character-info">
+        <div>
+          <p>Server: <span id="server"></span></p>
+        </div>
 
-<img src="" id="portrait">
-
-<main> 
-    <div class="character-info">
-      <p>Server:</p>
-      <p id="server"></p>
-      <p>Class:</p>
-      <p id="classJob"></p>
-      <p>Class Level:</p>
-      <p id="classLevel"></p>
-      <p>Free Company:</p>
-      <p id="company"></p>
+        <div>
+          <p>Class: <span id="classJob"></span></p>
+          </div>
+        
+        <div>
+        <p>Class Level: <span id="classLevel"></span></p>
+        </div>
+        
+        <div>
+        <p>Free Company: <span id="company"></span></p>
+        </div>
     </div>
   </main>
+
     <!-- Move main to right side of portrait -->
     <!-- Do I need a div for character information? -->
-
 </body>
 
 </html>

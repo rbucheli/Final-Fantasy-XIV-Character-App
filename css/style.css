@@ -1,47 +1,70 @@
-/* @font-face {
-  font-family: finalFont;
-  src: url();
-} */
+@font-face {
+  font-family: OPTIEngeEtienne;
+  src: url("../fonts/OPTIEngeEtienne.otf") format("opentype");
+}
+
+
+body {
+  font-family: 'OPTIEngeEtienne', sans-serif;
+}
 
 .header {
   text-align: center;
+  margin-bottom: 5%;
   padding-top: 1%;
   color: white;
-  }
+}
+
+.header h1 {
+  font-weight: normal;
+  font-size: 500%;
+}
+
+.container h2 {
+  font-weight: normal;
+}
 
 .primary-info {
   border: solid;
   border-width: 2px;
   border-radius: 2ch;
   border-color: white;
-  width: 29%;
   /* background-color: */
-  margin-top: 2%;  
   padding-left: 10px;
   color: white;
-  }
+  font-size: 200%;
+}
 
 .character-info {
   border: solid; 
   border-width: 2px;
   border-radius: 2ch;
   border-color: white;
-  width: 50%;
   color: white;
   text-align: left;
   text-indent: 2%;
-  }
+  font-size: 300%;
+}
 
+.container {
+  display: flex;
+  margin: 0 5%;
+}
 
-main { 
-  text-align: right;
+.primary-column {
+  flex-basis: 50%;
+}
+
+.secondary-column {
+  flex-basis: 50%;
+  margin-left: 2%;
 }
 
 body {
   padding-left: 2%;
   padding-right: 2%;
   background-color: rgb(47, 40, 122);
-  }
+}
 
 /*p .primary-info {
   text-align: center;
@@ -55,8 +78,8 @@ body {
 
 #portrait {
   border-radius: 20px;
-  width: auto;
-  max-width: 30%;
+  width: 100%;
+  max-width: 100%;
   margin-top: 2%;
 }
 /* 
