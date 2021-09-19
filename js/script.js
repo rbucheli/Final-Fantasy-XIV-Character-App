@@ -18,8 +18,8 @@ function handleGetData(event) {
 
   userInput = $input.val();
 
-  // Need to convert search to format that api call accepts (remove spaces)
-  //might get more than one match 
+  //Need to convert search to format that api call accepts (remove spaces)
+  //Might get more than one match 
   $.ajax({
     url: "https://xivapi.com/character/search?name=" + userInput,
     type: "get"
@@ -27,18 +27,20 @@ function handleGetData(event) {
     (data) => {
       const lodeStoneId = data.Results[0].ID;
       $.ajax({
-        // url: `https://xivapi.com/character/${lodeStoneId}?data=AC,FR,FC,FCM,PVP`,
         url: `https://xivapi.com/character/${lodeStoneId}?data=FC`,
         type: 'get'
       }).then(
         (data) => {
-          console.log(data);
           charName = data.Character.Name;
           charServer = data.Character.Server;
           charJob = data.Character.ActiveClassJob.UnlockedState.Name;
           charLevel = data.Character.ActiveClassJob.Level;
           charPortraitUrl = data.Character.Portrait
-          charFC = data.FreeCompany.Name;
+          // charFC = data.FreeCompany.Name;
+          // if (data.FreeCompany) {
+          //   charFC = data.FreeCompany.Name;
+          // }
+          charFC = data.FreeCompany ? data.FreeCompany.Name : 'None';
           setCharacterProperties();
         },
         (error) => {
@@ -67,4 +69,4 @@ $('form').on('submit', handleGetData);
 //3. Make ajax call for lodestone id
 //4. Make your ajax call for char data
 //5. If data is successful, store them in variables
-//6. display elements on your page
+//6. Display elements on your page
