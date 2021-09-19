@@ -3,9 +3,13 @@
   src: url("../fonts/OPTIEngeEtienne.otf") format("opentype");
 }
 
-
 body {
   font-family: 'OPTIEngeEtienne', sans-serif;
+}
+
+input {
+  font-family: 'OPTIEngeEtienne', sans-serif;
+  font-size: 200%;
 }
 
 .header {
@@ -82,5 +86,22 @@ body {
   max-width: 100%;
   margin-top: 2%;
 }
-/* 
-@media only screen and (min-width: 900px) { */
+
+@media only screen and (max-width: 800px) {
+  .primary-info {
+    font-size: 200%;
+    text-align: center;
+    
+  }
+  .container{
+    flex-direction: column;
+  }
+
+  .secondary-column {
+    margin-top: 4%;
+  }
+
+  .character-info {
+    font-size: 300%;
+  }
+}
