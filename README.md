@@ -1,7 +1,7 @@
-My Final Fantasy
+Final Fantasy XIV Companion App
 ================
 
-A web page that displays a player's character's stats from Final Fantasy XIV.
+A simple web application that allows users to search for a player's character information from the popular massively multiplayer online role-playing game, Final Fantasy XIV. The application fetches character information from an application programming interface (API) to populate information onto the web page.
 
 Technologies Used 
 ================
@@ -9,6 +9,7 @@ Technologies Used
  - CSS3
  - Javascript
  - jQuery
+ - Google Fonts
  - XIV API 
   
 Screenshots
@@ -19,11 +20,9 @@ Screenshots
 Getting Started
 ===============
 Here's the site
-[link](https://awesome-heisenberg-f0e05c.netlify.app/).
+[link](https://final-fantasy-xiv.netlify.app/).
 
 Future Enhancements
 ===============
-- Include drop down menu for servers (when searching for a character)
-- Include job quiz
+- Include a search bar
 - Add load spinner
-- Focus on specific information
